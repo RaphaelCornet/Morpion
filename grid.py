@@ -1,7 +1,5 @@
 from typing import Optional
 
-from constants import GRID_SIDE
-
 
 def __filled(grid: list[list[int]], placement: tuple[int, int]) -> bool:
     return grid[placement[0]][placement[1]] != 1
@@ -16,11 +14,11 @@ def copy(grid: list[list[int]]) -> list[list[int]]:
 
 
 def create() -> list[list[int]]:
-    return [[1 for _ in range(GRID_SIDE)] for _ in range(GRID_SIDE)]
+    return [[1 for _ in range(3)] for _ in range(3)]
 
 
 def convert(move: int) -> tuple[int, int]:
-    return (move - 1) % GRID_SIDE, (move - 1) // GRID_SIDE
+    return (move - 1) // 3, (move - 1) % 3
 
 
 def finish(grille) -> tuple[bool, Optional[int]]:
@@ -35,7 +33,7 @@ def finish(grille) -> tuple[bool, Optional[int]]:
     if grille[0][2] == grille[1][1] == grille[2][0] and grille[0][2] != 1:
         return True, grille[0][2]
     if all(grille[i][j] != 1 for i in range(3) for j in range(3)):
-        return True, 0
+        return True, 1
     return False, None
 
 
