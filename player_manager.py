@@ -18,9 +18,9 @@ def __ask(grid: list[list[int]]) -> int:
     return int(move)
 
 
-def __best(grid) -> tuple[int, int]:
+def __best(grid) -> Optional[tuple[int, int]]:
     """
-    Return the best possible placement in the current grid using the minimax algorithms
+    Return the best possible placement in the current grid using the minimax algorithm.
 
     :param grid: The grid of the current game
     """
@@ -53,9 +53,9 @@ def __eval(grid: list[list[int]], player: int) -> float:
             return 0
 
     if player == 0:
-        best_score = float("-inf")
-    else:
         best_score = float("+inf")
+    else:
+        best_score = float("-inf")
     for placement in grid_manager.possibles(grid):
         grid_manager.add(grid, placement, player)
         if player == 0:
@@ -92,4 +92,8 @@ def human_turn(grid: list[list[int]]):
 
 
 def random() -> int:
+    """
+    Return a random player
+    :return:
+    """
     return choice([0, 2])
