@@ -2,7 +2,7 @@ from typing import Optional
 
 from display import d_grid, d_winner
 from grid import create, finish
-from player import random, human_turn, computer_turn
+from player import computer_turn, human_turn, random
 
 
 def main():
@@ -19,9 +19,9 @@ def main():
             result = finish(grid)
             if result[0]:
                 break
-            computer_turn(grid, turn)
+            computer_turn(grid)
         elif starter == 2:
-            computer_turn(grid, turn)
+            computer_turn(grid)
             result = finish(grid)
             if result[0]:
                 break
