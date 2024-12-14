@@ -15,11 +15,11 @@ def d_grid(grid: list[list[int]]):
 
 def d_winner(grid: list[list[int]], winner: int, turn: int):
     print("--- Fin de la partie ---\n")
-    if winner == 1:
+    if winner == 0:
         print(f"La partie se termine par la victoire du joueur en {turn} tours")
-    elif winner == 2:
-        print(f"La partie se termine par la victoire de l'ordinateur en {turn} tours")
-    else:
+    elif winner == 1:
         print(f"La partie se termine par une égalité en {turn} tours")
+    else:
+        print(f"La partie se termine par la victoire de l'ordinateur en {turn} tours")
     print()
     d_grid(grid)
