@@ -4,7 +4,11 @@ def grid(grid_: list[list[int]]):
 
     :param grid_: The grid of the current game
     """
-    grid_appearance: str = "- " * 5 + "\n"
+    print(grid_appearance(grid_))
+
+
+def grid_appearance(grid_) -> str:
+    grid_appearance_: str = "- " * 5 + "\n"
     for line in grid_:
         line_appearance: str = ""
         for cell in line:
@@ -14,8 +18,8 @@ def grid(grid_: list[list[int]]):
                 line_appearance += "  | "
             elif cell == 2:
                 line_appearance += "O | "
-        grid_appearance += line_appearance[:-2] + "\n" + "- " * 5 + "\n"
-    print(grid_appearance)
+        grid_appearance_ += line_appearance[:-2] + "\n" + "- " * 5 + "\n"
+    return grid_appearance_
 
 
 def winner(grid_: list[list[int]], winner_: int, turn: int):

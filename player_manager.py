@@ -91,9 +91,8 @@ def human_turn(grid: list[list[int]]):
     grid_manager.add(grid, placement, 0)
 
 
-def random() -> int:
+def random_turn() -> int:
     """
     Return a random player
-    :return:
     """
     return choice([0, 2])
